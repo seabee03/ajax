@@ -29,3 +29,10 @@ function renderButtons() {
         $("#buttons-view").append(a);
     }
 }
+
+$("#add-player").on("click", function(event) {
+    event.preventDefault();
+    var players = $("#player-input").val().trim();
+    players.push(player);
+    renderButtons();
+});
