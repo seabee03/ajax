@@ -17,3 +17,16 @@ function generateButtons() {
         $("#buttons-holder").append(a);
     }
 }
+
+// adding the event "click"
+$("#add").on("click", function(event) {
+    // Prevents browser from refreshing and prevents repeating buttons
+    event.preventDefault();
+    // allows for user to add a new player
+    var newPlayer = $("#player-input").val();
+    console.log(newPlayer);
+    // pushes the information to the generateButtons function
+    player.push(newPlayer);
+    generateButtons();
+
+})
