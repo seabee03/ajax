@@ -3,12 +3,12 @@ var players = ["Kawhi Leonard", "Tony Parker", "Kobe Bryant", "Lebron James", "S
 
 function displayPlayerInfo() {
     var player = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + player "&api_key=pM7BRdBRDkZ7zM5AjIWd4jim5DaQR31h&limit=5";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + player + "&api_key=pM7BRdBRDkZ7zM5AjIWd4jim5DaQR31h&limit=5";
 
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).them(function(response) {
+    }).then(function(response) {
         var playerDiv = $("<div class='player'>");
         var rating = response.Rated;
         var pOne = $("<p>").text("Rating: " + rating);
@@ -32,7 +32,10 @@ function renderButtons() {
 
 $("#add-player").on("click", function(event) {
     event.preventDefault();
-    var players = $("#player-input").val().trim();
+    var player = $("#player-input").val().trim();
     players.push(player);
     renderButtons();
 });
+
+$(document).on("click", ".player-btn", displayPlayerInfo);
+renderButtons();
