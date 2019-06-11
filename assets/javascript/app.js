@@ -18,3 +18,14 @@ function displayPlayerInfo() {
         $("#players-view").prepend(playerDiv);
     });
 }
+
+function renderButtons() {
+    $("#buttons-view").empty();
+    for (var i = 0; i < players.length; i++) {
+        var a = $("<button>");
+        a.addClass("player-btn");
+        a.attr("data-name", players[i]);
+        a.text(players[i]);
+        $("#buttons-view").append(a);
+    }
+}
