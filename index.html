@@ -9,20 +9,32 @@
 </head>
 
 <body>
-    <div id="buttons-holder">
+    <div class="container">
+        <!-- Buttons dump here -->
+        <div id="buttons-holder">
 
+        </div>
+
+        <form id="input-form">
+            <label for="player-input">
+                Add player here
+            </label>
+            <input type="text" id="player-input">
+            <br>
+
+            <!-- Triggers new player  -->
+            <input id="add" type="submit" value="Submit">
+        </form>
+
+        <!-- Players will show up here -->
+        <div id="players-vew"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script src="assets/javascript/app.js">
+        </script>
     </div>
-    <div id="input-form">
-        <label for="player-input">
-            Add player here
-        </label>
-        <input type="text" id="player-input">
-        <input id="add" type="submit" value="Submit">
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    </script>
-    <script src="assets/javascript/app.js">
-    </script>
+
 </body>
 
 </html>
