@@ -30,3 +30,15 @@ $("#add").on("click", function(event) {
     generateButtons();
 
 })
+
+// creating function for ajax to "GET"
+$(".classToAdd").on("click", function() {
+    $("#results").empty();
+    var queryURL = $(this).attr("data-type");
+    $.ajax({
+        url: "http://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=pM7BRdBRDkZ7zM5AjIWd4jim5DaQR31h&limit=5",
+        method: "GET"
+    }).then(function(response) {
+        var results = response.data;
+    })
+})
